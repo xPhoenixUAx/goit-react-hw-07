@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contactsOps";
 import s from "./Contact.module.css";
 
-const Contact = ({ name, phone, id, createdAt }) => {
+const Contact = ({ name, number, id, createdAt }) => {
   const dispatch = useDispatch();
 
   return (
@@ -14,7 +14,7 @@ const Contact = ({ name, phone, id, createdAt }) => {
       </p>
       <p className={s.text}>
         Phone: <br />
-        {phone}
+        {number}
       </p>
       <p>
         Created: <br />

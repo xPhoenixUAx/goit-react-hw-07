@@ -5,11 +5,12 @@ import s from "./ContactForm.module.css";
 import toast, { Toaster } from "react-hot-toast";
 
 const ContactForm = () => {
-  const initialValues = { name: "", phone: "" };
+  const initialValues = { name: "", number: "" };
   const dispatch = useDispatch();
 
   const onSubmit = (values, options) => {
-    values.phone && values.name
+    console.log("Submitted values:", values);
+    values.number && values.name
       ? dispatch(addContact(values)) && options.resetForm()
       : toast("Please enter name and valid phone number", {
           duration: 2000,
@@ -29,7 +30,7 @@ const ContactForm = () => {
           <Field
             className={s.input}
             type="tel"
-            name="phone"
+            name="number"
             placeholder="Enter contact phone number"
           />
           <button className={s.btn} type="submit">
